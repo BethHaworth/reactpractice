@@ -1,4 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@keyframes HeroAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(20px)
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0px)
+  }
+}
 @media (max-width: 640px) {
   .HeroGroup {
     padding: 100px 20px;
@@ -21,7 +31,7 @@
 .HeroGroup {
   max-width: 800px;
   margin: 0 auto;
-  padding: 150px 50px;
+  padding: 120px 50px;
   text-align: center;
 }
 .Hero h1 {
@@ -29,27 +39,28 @@
   color: white;
   font-size: 60px;
   line-height: 1.2;
+  animation: HeroAnimation 3s 0.5s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
 }
 .Hero p {
   font-size: 30px;
   line-height: 1.5;
   color: rgba(255, 128, 238, 0.8);
   font-weight: bold;
-  background: rgba(0,0,0,0.6);
-  margin-top: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 50px;
+  margin-top: 200px;
+  animation: HeroAnimation 3s 1s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+  opacity: 0;
 }
 .Hero a {
   font-size: 17px;
   font-weight: 600;
   color: white;
   text-transform: uppercase;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,30%);
   padding: 9px 20px;
   border: 1px solid rgba(255,255,255, 0.25);
   border-radius: 20px;
+
 }
 html {
   font-family: 'Open Sans', sans-serif;
@@ -99,10 +110,15 @@ a {
   color: #5334F5;
   font-weight: 600;
   text-decoration: none;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1.0);
 }
 a:active,
 a:hover {
   outline-width: 0;
+  cursor: pointer;
+  background: #56CCF2;
+  color: black;
+  transform: translateY(-3px);
 }
 abbr[title] {
   border-bottom: none;
